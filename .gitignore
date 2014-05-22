@@ -1,0 +1,5 @@
+# Files for integration with Qt Creator
+*.creator*
+*.files
+*.includes
+*.config

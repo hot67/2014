@@ -170,6 +170,10 @@ BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CameraHa
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CheesyVisionServer.o : $(PRJ_ROOT_DIR)/CheesyVisionServer.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/DriveWrapper.o : $(PRJ_ROOT_DIR)/DriveWrapper.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -178,7 +182,15 @@ BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/Joystick
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TCPServer.o : $(PRJ_ROOT_DIR)/TCPServer.c $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C-Compiler) $(CC_ARCH_SPEC) -ansi  -Wall  -MD -MP $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TiltSensor.o : $(PRJ_ROOT_DIR)/TiltSensor.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/VisionThread.o : $(PRJ_ROOT_DIR)/VisionThread.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -188,9 +200,12 @@ BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/further-
 
 OBJECTS_BuiltinDefaultCode_partialImage = BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/ArmWrapper.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CameraHandler.o \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CheesyVisionServer.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/DriveWrapper.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/JoystickWrapper.o \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TCPServer.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TiltSensor.o \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/VisionThread.o \
 	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/further-suggestions.o
 
 BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage.o : $(OBJECTS_BuiltinDefaultCode_partialImage)
@@ -205,8 +220,9 @@ BuiltinDefaultCode_partialImage/$(MODE_DIR)/BuiltinDefaultCode_partialImage_clea
 
 force : 
 
-DEP_FILES := BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/ArmWrapper.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CameraHandler.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/DriveWrapper.d \
-	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/JoystickWrapper.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TiltSensor.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/further-suggestions.d
+DEP_FILES := BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/ArmWrapper.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CameraHandler.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/CheesyVisionServer.d \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/DriveWrapper.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/JoystickWrapper.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TCPServer.d \
+	 BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/TiltSensor.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/VisionThread.d BuiltinDefaultCode_partialImage/$(MODE_DIR)/Objects/further-suggestions/further-suggestions.d
 -include $(DEP_FILES)
 
 

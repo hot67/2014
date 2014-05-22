@@ -1,6 +1,8 @@
-
-#ifndef TILTSENSOR_H_
-#define TILTSENSOR_H_
+/*
+ * We are currently not using this file
+ */
+#ifndef _TILTSENSOR_H_
+#define _TILTSENSOR_H_
 
 #include "PIDSource.h"
 #include "ADXL345_I2C.h"

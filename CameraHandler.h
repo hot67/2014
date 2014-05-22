@@ -1,25 +1,31 @@
-	#include "WPILib.h"
+
+#ifndef _CAMERAHANDLER_H
+#define _CAMERAHANDLER_H
+
+#include "WPILib.h"
 	#include <cmath>
 	#include "nivision.h"
 	#include "Defines.h"
 
-	enum state_t {
-		kNone,
-		kLeft,
-		kRight,
-		kError
-	};
 
 	class CameraHandler	
 	{
 	public:
+		
 		CameraHandler(AxisCamera *camera, DriverStationLCD *m_dsLCD, Relay *relay);
+		
+		enum state_t {
+			kNone,
+			kLeft,
+			kRight,
+			kError
+		};
 		
 		// Returns the x-position of vision target in 1.0 to -1.0
 		// 0.0 means the vision target is the center of the picture (just infront of the robot)
 		double getCenter();
 		
-		// Returns the where is the hot goal
+		// Returns what goal is hot
 		// - kLeft, kRight, kNone, kError
 		state_t getHotGoal();
 		
@@ -43,3 +49,5 @@
 		ColorImage *img2;
 		Relay *light;
 	};
+	
+#endif

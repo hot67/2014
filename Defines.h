@@ -1,3 +1,7 @@
+
+#ifndef _DEFINES_H
+#define _DEFINES_H
+
 // Buttons
 
 #define BUTTON_A 1
@@ -18,6 +22,7 @@
 #define TRIGGERS 3
 #define RIGHT_X 4
 #define RIGHT_Y 5
+#define ACCEL_CAP 0.1
 
 //Universal constants
 #define CAMERA_ANGLE 0.82030475
@@ -30,12 +35,12 @@
 	// Place practice bot values here
 	#define FLOOR_PICKING_POS 378.0
 	#define MED_SHOOT_POS 115.0
-	#define MED_SHOT_BACK -188.0 //-175.0
+	#define MED_SHOT_BACK -198.0 //-175.0
 	#define GUARDED_SHOT_FRONT 90.0
 	#define GUARDED_SHOT_BACK -130.5
 	#define LONG_SHOOT_POS -126
-	#define TRUSS_SHOT 49.0
 	#define CATCH_POS 14.0
+	#define TRUSS_SHOT 49.0
 	#define BGRABBER_SAFE 3
 	#define AUTON_SHOOT_POS 1
 	#define SELF_CATCH -31.0
@@ -54,9 +59,9 @@
 	#define ARM_D 0.0
 
 	// Drive PID
-	#define DRV_P 0.0625
+	#define DRV_P 0.1
 	#define DRV_I 0.000
-	#define DRV_D 0.210
+	#define DRV_D 0.0
 	#define REV_IN 100.0
 
 	// RAMROD
@@ -77,8 +82,9 @@
 	// Place bot values here
 	#define FLOOR_PICKING_POS 381
 	#define MED_SHOOT_POS 135
-	#define MED_SHOT_BACK -180.0
+	#define MED_SHOT_BACK -188.0
 	#define GUARDED_SHOT_FRONT 104.0
+	#define GUARDED_SHOT 50
 	#define GUARDED_SHOT_BACK -132.5
 	#define SELF_CATCH -15.0
 	#define TRUSS_SHOT 49.0
@@ -106,6 +112,14 @@
 	#define DRV_D 0.210
 	#define REV_IN 100.0
 
+	#define AUTONDRV_STRAIGHT_P 0.15
+	#define AUTONDRV_STRAIGHT_I 0.00
+	#define AUTONDRV_STRAIGHT_D 0.210
+	
+	#define AUTONDRV_ROTATE_P 0.300
+	#define AUTONDRV_ROTATE_I 0.000
+	#define AUTONDRV_ROTATE_D 0.000
+
 	// RAMROD
 	#define RAM_LOCK_POSITION 930
 	#define RAM_MID_POSITION 350
@@ -118,4 +132,6 @@
 
 	//Special PWMs
 	#define ROLLER_PWM 8
+#endif
+
 #endif

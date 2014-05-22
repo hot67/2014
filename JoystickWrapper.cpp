@@ -14,6 +14,9 @@ JoystickWrapper::JoystickWrapper(int gamepad) {
 	m_timer->Reset();
 }
 
+/*
+ * Private Mothods
+ */
 float JoystickWrapper::adjust (float input) {
 	if (input < -0.2) {
 		return input;
@@ -32,6 +35,9 @@ void JoystickWrapper::trackTimer () {
 	}
 }
 
+/*
+ * Public Methods
+ */
 bool JoystickWrapper::GetRawButton (int channel) {
 	return m_gamepad->GetRawButton (channel);
 }

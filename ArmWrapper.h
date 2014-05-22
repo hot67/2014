@@ -1,8 +1,12 @@
-#include "WPILib.h"
-#include <cmath>
+/*
+ * We Currently not using this file
+ */
 
 #ifndef ARMWRAPPER_H
 #define ARMWRAPPER_H
+
+#include "WPILib.h"
+#include <cmath>
 
 class ArmWrite;
 
